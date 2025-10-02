@@ -1,8 +1,8 @@
 package com.example.demo.service;
 
 
-import com.example.demo.Entities.Usuario;
 import com.example.demo.dto.UsuarioDTO;
+import com.example.demo.entities.Usuario;
 import com.example.demo.mapper.UsuarioMapper;
 import com.example.demo.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
