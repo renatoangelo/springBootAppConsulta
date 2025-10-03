@@ -21,13 +21,13 @@ public class Consulta {
     @Column(name="id_consulta")
     private Long id;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "id_paciente", nullable = false)
-    private Long pacienteId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_paciente", nullable = false)
+    private Paciente pacienteId;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //JoinColumn(name = "id_medico", nullable = false)
-    private Long medicoId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_medico", nullable = false)
+    private Medico medicoId;
 
     @Column(nullable = false)
     private LocalDateTime dataHora;
