@@ -1,6 +1,5 @@
-package com.example.demo.Entities;
 
-import java.time.LocalDate;
+package com.example.demo.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,31 +15,19 @@ import lombok.Setter;
 
 @Data
 @Entity
-@Table(name = "usuarios")
+@Table(name = "especialidades")
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
-public class Usuario {
+public class Especialidades {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_especialidade")
     private Long id;
 
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, unique = true)
-    private String cpf;
-
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Column(nullable = false)
-    private String senha;
-
-    @Column(nullable = false)
-    private LocalDate dataNascimento;
-
-    @Column(nullable = false)
-    private String telefone;
 }
+
 
