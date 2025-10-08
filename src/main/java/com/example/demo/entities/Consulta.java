@@ -9,6 +9,10 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+//Just a Sample of Update
+// Please Delete
+
+
 @Entity
 @Getter @Setter
 @Table(name="consultas")
