@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+
 import com.example.demo.service.StatusConsulta;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,10 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-
-//Just a Sample of Update
-// Please Delete
-
 
 @Entity
 @Getter @Setter
