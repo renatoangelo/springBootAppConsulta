@@ -33,6 +33,6 @@ public class Medico {
 
     @ManyToOne
     @JoinColumn(name = "id_especialidade", nullable = false)
-    private Especialidades especialidade;
+    private Especialidade especialidade;
 
 }
