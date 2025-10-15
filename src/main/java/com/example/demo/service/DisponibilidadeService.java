@@ -26,14 +26,17 @@ public class DisponibilidadeService {
         return disponibilidadeMapper.toDTO(disponibilidadeRepository.save(disponibilidade));
     }
 	
-	public List<DisponibilidadeDTO> findByMedicoId(Long medicoId) {
-        List<Disponibilidade> disponibilidades = disponibilidadeRepository.findByMedicoId(medicoId);
-        return disponibilidadeMapper.toListDTOs(disponibilidades);
-    }
+	public List<DisponibilidadeDTO> listarPorMedico(Long medicoId) {
+	    List<Disponibilidade> disponibilidades = disponibilidadeRepository.findByMedicoId(medicoId);
+	    return disponibilidadeMapper.toListDTOs(disponibilidades);
+	}
 	
 	@Transactional
 	public void deletarDisponibilidade(Long id) {
-		disponibilidadeRepository.deleteById(id);
+	    if (!disponibilidadeRepository.existsById(id)) {
+	        throw new IllegalArgumentException("Disponibilidade com ID " + id + " não encontrada.");
+	    }
+	    disponibilidadeRepository.deleteById(id);
 	}
 	
 }

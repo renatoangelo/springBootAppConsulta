@@ -3,8 +3,6 @@ package com.example.demo.dto;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-import javax.sound.sampled.AudioFormat;
-
 @Data
 public class EspecialidadeDTO {
 
