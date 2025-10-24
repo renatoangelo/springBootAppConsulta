@@ -19,7 +19,7 @@ import jakarta.validation.Valid;
 
 @Tag(name = "Medicos", description = "Endpoints para gerenciamento de médicos")
 @RestController
-@RequestMapping("api/medicos")
+@RequestMapping("/medicos")
 public class MedicoController {
 
     @Autowired
