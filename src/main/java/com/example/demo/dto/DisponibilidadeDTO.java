@@ -10,8 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DisponibilidadeDTO {
 
+	private Long id;
+
 	@NotBlank(message = "Adicione o medico na disponibilidade")
 	private String nomeMedico;
+
+	@NotBlank(message = "Adicione falta a especialidade")
+	private String nomeEspecialidade;
 
 	@NotBlank(message = "Qual dia da semana?")
 	private String diaSemana;
@@ -53,7 +58,21 @@ public class DisponibilidadeDTO {
 	public void setHorarioFim(LocalTime horarioFim) {
 		this.horarioFim = horarioFim;
 	}
-	
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNomeEspecialidade() {
+		return nomeEspecialidade;
+	}
+
+	public void setNomeEspecialidade(String nomeEspecialidade) {
+		this.nomeEspecialidade = nomeEspecialidade;
+	}
 
 }

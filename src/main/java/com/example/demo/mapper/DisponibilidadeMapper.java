@@ -12,7 +12,8 @@ public interface DisponibilidadeMapper {
 	
 	default DisponibilidadeDTO toDTO(Disponibilidade disponibilidade) {
 		DisponibilidadeDTO dto = new DisponibilidadeDTO();
-		//dto.setNomeMedico(disponibilidade.getMedico().getNome());
+		dto.setNomeMedico(disponibilidade.getMedico().getNome());
+		dto.setNomeEspecialidade(disponibilidade.getMedico().getEspecialidade().getNome());
 		dto.setDiaSemana(disponibilidade.getDiaSemana());
 		dto.setHorarioInicio(disponibilidade.getHorarioInicio());
 		dto.setHorarioFim(disponibilidade.getHorarioFim());
