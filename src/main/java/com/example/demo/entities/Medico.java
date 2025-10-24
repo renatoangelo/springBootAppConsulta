@@ -27,9 +27,8 @@ public class Medico {
     @ManyToOne
     @JoinColumn(name = "id_especialidade", nullable = true)
     private Especialidade especialidade;
-
+  
     public Medico(Long id, String nome, String crm, Especialidade especialidade) {
-
         this.id = id;
         this.nome = nome;
         this.crm = crm;
