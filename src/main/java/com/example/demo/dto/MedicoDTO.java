@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
-@Data
 @NoArgsConstructor
+
 public class MedicoDTO {
-    private Long id;
 
     @NotBlank(message = "O nome é obrigatório")
     private String nome;
@@ -20,4 +19,38 @@ public class MedicoDTO {
 
     @NotBlank(message = "A especialidade é obrigatória")
     private String especialidade;
+
+
+    public MedicoDTO(String nome, String crm, String especialidade) {
+        this.nome = nome;
+        this.crm = crm;
+        this.especialidade = especialidade;
+    }
+
+    public MedicoDTO() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public void setCrm(String crm) {
+        this.crm = crm;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
 }

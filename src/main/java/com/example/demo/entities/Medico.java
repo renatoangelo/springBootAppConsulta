@@ -8,17 +8,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Data
+
 @Entity
 @Table(name = "medico")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
 public class Medico {
     
     @Id
@@ -32,36 +25,48 @@ public class Medico {
     private String crm;
 
     @ManyToOne
-    @JoinColumn(name = "id_especialidade", nullable = false)
+    @JoinColumn(name = "id_especialidade", nullable = true)
     private Especialidade especialidade;
+  
+    public Medico(Long id, String nome, String crm, Especialidade especialidade) {
+        this.id = id;
+        this.nome = nome;
+        this.crm = crm;
+        this.especialidade = especialidade;
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public Medico() {
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Especialidade getEspecialidade() {
-		return especialidade;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setEspecialidade(Especialidade especialidade) {
-		this.especialidade = especialidade;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	
-	
-    
-    
+    public String getCrm() {
+        return crm;
+    }
 
+    public void setCrm(String crm) {
+        this.crm = crm;
+    }
+
+    public Especialidade getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(Especialidade especialidade) {
+        this.especialidade = especialidade;
+    }
 }

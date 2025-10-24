@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.MedicoDTO;
+import com.example.demo.entities.Especialidade;
 import com.example.demo.entities.Medico;
 import com.example.demo.mapper.MedicoMapper;
+import com.example.demo.repository.IEspecialidadeRepository;
 import com.example.demo.repository.IMedicoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class MedicoService {
     private IMedicoRepository medicoRepository;
 
     @Autowired
+    private IEspecialidadeRepository especilidadeRepository;
+
+    @Autowired
     private MedicoMapper medicoMapper;
     
 
@@ -31,6 +36,11 @@ public class MedicoService {
 
     public MedicoDTO salvar(MedicoDTO medicoDTO) {
         Medico medico = medicoMapper.toEntity(medicoDTO);
+
+        Especialidade especialidade = especilidadeRepository.findByNome(medicoDTO.getEspecialidade())
+                .orElseThrow(()-> new IllegalArgumentException("Especialidade não encontrada!"));
+
+        medico.setEspecialidade(especialidade);
         return medicoMapper.toDTO(medicoRepository.save(medico));
     }
 

@@ -14,9 +14,8 @@ public interface MedicoMapper {
     @Mapping(target = "especialidade", source = "especialidade.nome")
     MedicoDTO toDTO(Medico medico);
 
-    @Mapping(target = "especialidade.nome", source = "especialidade")
+    @Mapping(target = "especialidade", ignore = true)
     Medico toEntity(MedicoDTO medicoDTO);
 
     List<MedicoDTO> toDTOList(List<Medico> medicos);
-
 }
