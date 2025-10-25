@@ -47,4 +47,55 @@ public class Consulta {
     @Column(length = 255)
     private String observacoes;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Paciente getPacienteId() {
+		return pacienteId;
+	}
+
+	public void setPacienteId(Paciente pacienteId) {
+		this.pacienteId = pacienteId;
+	}
+
+	public Medico getMedicoId() {
+		return medicoId;
+	}
+
+	public void setMedicoId(Medico medicoId) {
+		this.medicoId = medicoId;
+	}
+
+	public LocalDateTime getDataHora() {
+		return dataHora;
+	}
+
+	public void setDataHora(LocalDateTime dataHora) {
+		this.dataHora = dataHora;
+	}
+
+	public StatusConsulta getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusConsulta status) {
+		this.status = status;
+	}
+
+	public String getObservacoes() {
+		return observacoes;
+	}
+
+	public void setObservacoes(String observacoes) {
+		this.observacoes = observacoes;
+	}
+    
+    
+    
+
 }

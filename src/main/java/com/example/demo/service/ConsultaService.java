@@ -27,7 +27,9 @@ public class ConsultaService {
     }
 
     public ConsultaDTO findById(Long id) {
-        return consultaMapper.toDTO(consultaRepository.findById(id).get());
+        return consultaRepository.findById(id)
+                .map(consultaMapper::toDTO)
+                .orElseThrow(() -> new IllegalArgumentException("Consulta não encontrada!"));
     }
 
     public ConsultaDTO update(Consulta consulta) {
@@ -38,4 +40,8 @@ public class ConsultaService {
         consultaRepository.delete(consulta);
     }
 
+    public Consulta findEntityById(Long id) {
+        return consultaRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Consulta não encontrada!"));
+    }
 }
