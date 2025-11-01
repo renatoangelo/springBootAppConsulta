@@ -36,6 +36,12 @@ public class EspecialidadeService {
         Especialidade especialidade = especialidadeMapper.toEntity(especialidadeDTO);
         return especialidadeMapper.toDTO(especialidadeRepository.save(especialidade));
     }
+    
+    public EspecialidadeDTO atualizar(EspecialidadeDTO especialidadeDTO, Long id) {
+        Especialidade especialidade = especialidadeMapper.toEntity(especialidadeDTO);
+        especialidade.setId(id);
+        return especialidadeMapper.toDTO(especialidadeRepository.save(especialidade));
+    }
 
     public void deletar(Long id) {
         especialidadeRepository.deleteById(id);

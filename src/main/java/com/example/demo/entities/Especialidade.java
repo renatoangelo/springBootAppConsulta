@@ -16,17 +16,19 @@ import lombok.Setter;
 @Data
 @Entity
 @Table(name = "especialidades")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Especialidade {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_especialidade")
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_especialidade")
+	private Long id;
 
-    @Column(nullable = false)
-    private String nome;
+	@Column(nullable = false)
+	private String nome;
 
 	public String getNome() {
 		return nome;
@@ -35,15 +37,12 @@ public class Especialidade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-    
-    
-  public Long getId() {
-     return id;
-  }
 
-  public void setId(Long id) {
-     this.id = id;
-  }
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 }
-
-
