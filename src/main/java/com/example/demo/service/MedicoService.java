@@ -43,6 +43,17 @@ public class MedicoService {
         medico.setEspecialidade(especialidade);
         return medicoMapper.toDTO(medicoRepository.save(medico));
     }
+    
+    public MedicoDTO atualizar(MedicoDTO medicoDTO, Long id) {
+        Medico medico = medicoMapper.toEntity(medicoDTO);
+        medico.setId(id);
+
+        Especialidade especialidade = especilidadeRepository.findByNome(medicoDTO.getEspecialidade())
+                .orElseThrow(()-> new IllegalArgumentException("Especialidade não encontrada!"));
+
+        medico.setEspecialidade(especialidade);
+        return medicoMapper.toDTO(medicoRepository.save(medico));
+    }
 
     public void deletar(Long id) {
         medicoRepository.deleteById(id);
