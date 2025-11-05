@@ -12,7 +12,15 @@ import com.example.demo.entities.Paciente;
 public interface PacienteMapper {
     PacienteDTO toDTO(Paciente paciente);
 
-    Paciente toEntity(PacienteDTO pacienteDTO);
+    default Paciente toEntity(PacienteDTO pacienteDTO) {
+        Paciente paciente = new Paciente();
+        paciente.setCpf(pacienteDTO.getCpf());
+        paciente.setEmail(pacienteDTO.getEmail());
+        paciente.setNome(pacienteDTO.getNome());
+        paciente.setTelefone(pacienteDTO.getTelefone());
+
+        return paciente;
+    }
 
     List<PacienteDTO> toDTOList(List<Paciente> pacientes);
 }
