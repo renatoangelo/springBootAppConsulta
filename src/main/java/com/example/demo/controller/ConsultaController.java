@@ -28,6 +28,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+
+//Checagem Point 12/11/2025 - 15:38
+
 @Tag(name = "Consultas", description = "Endpoints para gerenciamento de consultas médicas")
 @RestController
 @RequestMapping("api/consultas")
