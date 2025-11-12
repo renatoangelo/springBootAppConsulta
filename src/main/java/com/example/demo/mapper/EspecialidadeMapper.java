@@ -17,7 +17,6 @@ public interface EspecialidadeMapper {
     default List<EspecialidadeDTO> toDTOList (List<Especialidade> especialidades){
         return especialidades.stream().map(e -> {
             EspecialidadeDTO dto = new EspecialidadeDTO();
-            dto.setId(e.getId());
             dto.setNome(e.getNome());
             return dto;
         }).collect(Collectors.toList());
